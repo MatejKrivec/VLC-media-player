@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Nastavitve.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Uredi.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControl1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Nastavitve.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\border.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\DockPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\Grid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\GridSplitter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\Image.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\ListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\MediaElement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\Menu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\Slider.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\StackPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\TextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\combobox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\Label.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\TabControll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Uredi.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControl1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

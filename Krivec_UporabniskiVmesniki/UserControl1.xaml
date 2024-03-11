@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="Krivec_UporabniskiVmesniki.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Krivec_UporabniskiVmesniki"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="280">
+    
+    <Grid Style="{StaticResource GridBackround_userControll}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        
+
+        <DockPanel Grid.Row="1" Grid.Column="0" Style="{StaticResource DockPanel_UserControll}">
+            
+            <Button Name="previouss" Style="{StaticResource Button_UserControll}"  Click="previous_Click">
+                <Button.Background>
+                    <SolidColorBrush x:Name="prev" Color="LightPink"/>
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="1x" AutoReverse="True">
+                                <ColorAnimation Duration="0:0:1" To="LightBlue" Storyboard.TargetProperty="Color" Storyboard.TargetName="prev"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+                
+                <StackPanel Style="{StaticResource StackPanel_userControll}">
+                    <Image Name="PREVIUS" Style="{StaticResource Image_UserControll_previous}"/>
+                </StackPanel>
+            </Button>
+            <Button Name="pause" Style="{StaticResource Button_UserControll}"  Click="pavza">
+                <Button.Background>
+                    <SolidColorBrush x:Name="paus" Color="LightPink"/>
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="1x" AutoReverse="True">
+                                <ColorAnimation Duration="0:0:1" To="LightBlue" Storyboard.TargetProperty="Color" Storyboard.TargetName="paus"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+                <StackPanel Style="{StaticResource StackPanel_userControll}">
+                    <Image Name="PAUSE" Style="{StaticResource Image_UserControll_pause}"/>
+                </StackPanel>
+            </Button>
+            <Button Name="play" Style="{StaticResource Button_UserControll}"  Click="predvajaj">
+                <Button.Background>
+                    <SolidColorBrush x:Name="ply" Color="LightPink"/>
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="1x" AutoReverse="True">
+                                <ColorAnimation Duration="0:0:1" To="LightBlue" Storyboard.TargetProperty="Color" Storyboard.TargetName="ply"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+                <StackPanel Style="{StaticResource StackPanel_userControll}" >
+                    <Image  Name="PLAY" Style="{StaticResource Image_UserControll_play}"/>
+                </StackPanel>
+            </Button>
+            <Button Name="stopp" Style="{StaticResource Button_UserControll}"  Click="stop_Click" >
+                <Button.Background>
+                    <SolidColorBrush x:Name="stp" Color="LightPink"/>
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="1x" AutoReverse="True">
+                                <ColorAnimation Duration="0:0:1" To="LightBlue" Storyboard.TargetProperty="Color" Storyboard.TargetName="stp"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+                <StackPanel  Style="{StaticResource StackPanel_userControll}">
+                    <Image  Name="stopIkonaa" Style="{StaticResource Image_UserControll_stop}" />
+                </StackPanel>
+            </Button>
+            <Button Name="nextt" Style="{StaticResource Button_UserControll}"  Click="next_Click">
+                <Button.Background>
+                    <SolidColorBrush x:Name="nxt" Color="LightPink"/>
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="1x" AutoReverse="True">
+                                <ColorAnimation Duration="0:0:1" To="LightBlue" Storyboard.TargetProperty="Color" Storyboard.TargetName="nxt"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+                <StackPanel Style="{StaticResource StackPanel_userControll}">
+                    <Image Name="NEXT" Style="{StaticResource Image_UserControll_next}" />
+                </StackPanel>
+            </Button>
+        </DockPanel>
+    </Grid>
+</UserControl>

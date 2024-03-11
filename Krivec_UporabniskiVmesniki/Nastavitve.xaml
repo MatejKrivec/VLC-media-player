@@ -1,0 +1,73 @@
+﻿<Window x:Class="Krivec_UporabniskiVmesniki.Nastavitve"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Krivec_UporabniskiVmesniki"
+        mc:Ignorable="d"
+        Title="Nastavitve" Height="312" Width="380"
+        ResizeMode="NoResize"
+        >
+    <Grid Style="{StaticResource GridBackround}">
+        <TabControl Style="{StaticResource TabControl_Backround}">
+            <TabItem Header="Nastavljanje multimedijskih zvrsti">
+                <Grid Style="{StaticResource GridBackround}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <DockPanel Grid.Row="0">
+                        <Label Style="{StaticResource Label_Properties1}">Zanri</Label>
+                        <Label Style="{StaticResource Label_Properties2}">Uredi dodaj ali izbrisi zanr</Label>
+                    </DockPanel>
+                    <DockPanel Grid.Row="1" >
+
+                        <ComboBox Name="comboBox" Style="{StaticResource ComboBox_Properties}" SelectionChanged="comboBox_SelectionChanged" ItemsSource="{Binding Source=x:Static properties:Settings.Default, Path=ZanrValue}">
+
+                        </ComboBox>
+
+                        <TextBox Name="VnosnoPolje" Style="{StaticResource Nastavitve_textbox}"/>
+                    </DockPanel>
+
+                    <DockPanel Grid.Row="4" Grid.Column="0"  Grid.RowSpan="2" Style="{StaticResource DockPanel_Nastavitve_gumbi}">
+                        <Button Name="Dodaj" Style="{StaticResource Button_Properties1}" Click="Dodaj_Click">Dodaj</Button>
+                        <Button Name="Brisi"  Style="{StaticResource Button_Properties2}" Click="Brisi_Click">Brisi</Button>
+                        <Button Name="Uredi" Style="{StaticResource Button_Properties3}" Click="Uredi_Click">Uredi</Button>
+                    </DockPanel>
+
+
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Avtomatsko Shranjevanje" >
+                <Grid Style="{StaticResource GridBackround}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <Label>Label</Label>
+                        <Label>Label</Label>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource StackPanel_Nastvitve_avtomatsko_shranjevanje}" Grid.Row="1">
+                        <CheckBox Name="AvtomatskoShranjevanje">Avtomatsko shranjevanje</CheckBox>
+                        <TextBox></TextBox>
+                    </StackPanel>
+                </Grid>
+
+
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

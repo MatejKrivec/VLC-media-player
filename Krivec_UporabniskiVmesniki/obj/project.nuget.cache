@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "agNS59FGrfYuxiy7pHbfRFYAUCSw16zWFROuim9+yhU7JZzv+nvgEy93xAKApNWixIa9aIOgBGebI28zs6a+jw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Matej\\Desktop\\UV\\Krivec_UporabniskiVmesniki\\Krivec_UporabniskiVmesniki.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Matej\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

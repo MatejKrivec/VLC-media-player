@@ -1,0 +1,259 @@
+﻿<Window x:Class="Krivec_UporabniskiVmesniki.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Krivec_UporabniskiVmesniki"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="auto"  
+        MinHeight="400" MinWidth="1200"
+        SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <Style x:Key="ListViewItemStyle1" TargetType="{x:Type ListViewItem}">
+            <Style.Triggers>
+
+
+                 <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Foreground" Value="Blue" />
+                </Trigger>
+                <Trigger Property="IsSelected"  Value="true">
+                    <Setter Property="Background" Value="Green" />
+                    <Setter Property="Foreground" Value="BlueViolet" />
+                </Trigger>
+                <!--<DataTrigger Binding="{Binding ElementName=Video, Path=IsMouseOver }" Value="true">
+                    <Setter Property="Background" Value="Red" />
+
+                </DataTrigger>-->  
+                
+            </Style.Triggers>
+             
+        </Style>
+
+        <!--<DataTrigger Binding="{Binding ElementName=Video, Path=IsMouseOver }" Value="True">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Foreground" Value="Blue" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=Video, Path=IsClicked }" Value="True">
+                    <Setter Property="Background" Value="Green" />
+                    <Setter Property="Foreground" Value="LightCoral" />
+                </DataTrigger>-->
+        <!--<Style TargetType="Border" x:Key="changeBorder">
+            <Setter Property="BorderBrush" Value="Green" />
+            <Setter Property="BorderThickness" Value="4" />
+            <Style.Triggers >
+                <DataTrigger  Value="True">
+                    <Setter Property="BorderBrush" Value="Black" />
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>--> 
+    </Window.Resources>
+
+    <Grid Style="{StaticResource GridBackround}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Style="{StaticResource StackPanel_Backround}">
+            <Menu Name="Menu" Style="{StaticResource Menu_Backround}">
+                <!--<Menu.RenderTransform>
+                    <RotateTransform x:Name="transform"/>
+                </Menu.RenderTransform>
+                <Menu.Triggers>
+                    <EventTrigger RoutedEvent="MenuItem.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation 
+                                    Storyboard.TargetName="transform"
+                                    Storyboard.TargetProperty="(RotateTransform.Angle)" 
+                                    From="0" To="360" Duration="0:0:5" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Menu.Triggers>-->   
+                <MenuItem Header="Menu" >
+                    <MenuItem Header="Datoteka">
+                        <MenuItem Header="Izhod" Click="Zapiranje_aplikacije"></MenuItem>
+                        <MenuItem Header="Uvozi" Click="Uvozi_Click"></MenuItem>
+                        <MenuItem Header="Izvozi" Click="Izvozi_Click"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Seznam">
+                        <MenuItem Header="Dodaj" Click="Dodaj_Click"></MenuItem>
+                        <MenuItem Header="Odstrani" Click="Odstrani_Click"></MenuItem>
+                        <MenuItem Header="Uredi" Click="Uredi_Click"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Orodja">
+                        <MenuItem Header="Nastavitve" Click="Nastavitve_Click"></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+
+        </StackPanel>
+
+        <StackPanel  Grid.Row="1" Grid.Column="0"  Style="{StaticResource StackPanel_MediaElement}">
+            <MediaElement Name="MediaElement" MediaOpened="MediaOpened" Source="{Binding strngs}" LoadedBehavior = "Manual" Stretch="UniformToFill" />
+        </StackPanel>
+
+        <GridSplitter Grid.Row="2" Style="{StaticResource GridSplitter_Properties}"></GridSplitter>
+        
+        <StackPanel Style="{StaticResource StackPanel_ListView}" Grid.Row="3" Grid.Column="0">
+            <ListView Name="Video" ItemsSource="{Binding files}" Grid.ColumnSpan="2" Style="{StaticResource ListView_Properties}" ItemContainerStyle="{StaticResource ListViewItemStyle1}" MouseDoubleClick="Video_MouseDoubleClick" SelectionChanged="klik">
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Dodaj" Click="Dodaj_Click"></MenuItem>
+                        <MenuItem Header="Odstrani" Click="Odstrani_Click"></MenuItem>
+                        <MenuItem Header="Uredi" Click="Uredi_Click"></MenuItem>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border x:Name="meja" Style="{StaticResource Border_Properties}" >
+                            <StackPanel Name="Playlist" Style="{StaticResource ListView_StackPanel}">
+                                <StackPanel Style="{StaticResource ListView_StackPanel_StackPanel}">
+                                    <TextBlock Text="Id" Style="{StaticResource ListView_TextBlock_width1}"/>
+                                    <TextBlock Text="Ime" Style="{StaticResource ListView_TextBlock_width4}"/>
+                                    <TextBlock Text="Zanr" Style="{StaticResource ListView_TextBlock_width3}"/>
+                                    <TextBlock Text="Image" Style="{StaticResource ListView_TextBlock_width2}"/>
+                                    <TextBlock Text="Lenghth" Style="{StaticResource ListView_TextBlock_width3}"/>
+                                    <TextBlock Text="Pot" Style="{StaticResource ListView_TextBlock_width5}"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="1">
+                                    <TextBlock Text="{Binding id}" Name="Id"  Style="{StaticResource ListView_TextBlock_width1}"/>
+
+                                    <TextBlock Text="{Binding Name}" Name="Name"  Style="{StaticResource ListView_TextBlock_width4}"/>
+
+                                    <TextBlock Text="{Binding Zanr}" Name="Zanr"  Style="{StaticResource ListView_TextBlock_width3}"/>
+                                    <!-- MouseLeftButtonUp="listView_MouseLeftButtonUp" -->
+                                    <!--   <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" Width="Auto"/> -->
+
+                                    <Image Source="{Binding Image}" Name="Image" Style="{StaticResource ListView_Image}"></Image>
+
+                                    <TextBlock Text="{Binding Lenghth}" Name="Lenghth"  Style="{StaticResource ListView_TextBlock_width3}"/>
+
+                                    <TextBlock Text="{Binding Pot}" Name="Pot"  Style="{StaticResource ListView_TextBlock_width5}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <!--<DataTemplate.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Style.Triggers>
+
+                                    <DataTrigger Binding="{Binding ElementName=meja, Path=IsMouseOver}" Value="true">
+                                        <Setter Property="Background" Value="BlueViolet" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=meja, Path=IsMouseOver}" >
+                                        <Setter Property="Selector.IsSelected" Value="true" />
+                                        <Setter Property="Background" Value="BlueViolet" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding selected}" Value="true">
+                                        <Setter TargetName="meja" Property="Background" Value="Green" />
+                                    </DataTrigger>
+
+                                </Style.Triggers>
+                            </Style>
+                        </DataTemplate.Resources> -->  
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<ListView Name="listView2"  Height="auto" MouseDoubleClick="listView_MouseDoubleClick" Width="auto"  SelectionChanged="klik">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Path" Width="Auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>-->
+            <!--<TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>-->  
+            <!--<Button Width="auto" Height="45" Name="Shuffle" Click="Shuffle_Click">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="C:\Users\Uporabnik\Desktop\UV\ikone\211887_shuffle_icon.png" Height="36" Width="43" RenderTransformOrigin="0.511,0.569"/>
+                </StackPanel>
+            </Button>-->
+
+        </StackPanel>
+
+        <Grid Grid.Row="5" Grid.Column="0">
+            
+            <TextBlock  Style="{StaticResource Casovnik1}" Name="casovnik"></TextBlock>
+
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="0">
+            <DockPanel Style="{StaticResource DockPanel_casovnik}">
+
+                <Slider  Width="{Binding Path=ActualWidth, ElementName=MediaElement}"  Name="CasPredvajanja" ValueChanged="CasPredvajanja_ValueChanged"  Style="{StaticResource casovnik}" Thumb.DragStarted="CasPredvajanja_DragStarted" Thumb.DragCompleted="CasPredvajanja_DragCompleted"/>
+
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="0">
+
+            <TextBlock Style="{StaticResource Casovnik2}" Name="Cas"></TextBlock>
+
+        </Grid>
+
+
+
+
+
+        <DockPanel Grid.Row="6" Grid.Column="0" Style="{StaticResource DockPanel_UserControll}">
+
+            <!--<local:UserControl1 x:Name="UporabniskiGradnik"/>-->
+            <local:UserControl1 x:Name="UporabniskiGradnik"/>
+
+
+            <!-- <Button Name="previous" Height="44" Width="55"  Click="previous_Click">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="Ikone\prv.png" Height="45" Width="43" />
+                </StackPanel>
+            </Button>
+            <Button Name="pause" Height="44" Width="55"  Click="pavza">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="Ikone\pause.png" Height="48" Width="55"/>
+                </StackPanel>
+            </Button>
+            <Button Name="play" Height="44" Width="55"  Click="predvajaj">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Image  Source="Ikone\vvv.png" Height="32" Width="38"/>
+                </StackPanel>
+            </Button>
+            <Button Name="stop" Height="44" Width="55"  Click="stop_Click">
+                <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="Ikone\bb.png" Height="30" Width="38" />
+                </StackPanel>
+            </Button>
+            <Button Name="next" Height="44" Width="55"  Click="next_Click">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="Ikone\nxt.png" Height="45" Width="43" />
+                </StackPanel>
+            </Button>-->  
+
+        </DockPanel>
+        <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+        <DockPanel  Style="{StaticResource DockPanel_Slider}" Grid.Row="6" Grid.Column="0" >
+
+            <Slider Name="volumen" ValueChanged="Nivo_volumna" Style="{StaticResource volumen}">
+                <!--<Slider.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:1"  To="30" Storyboard.TargetProperty="height"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Slider.Triggers>--> 
+            </Slider>
+
+        </DockPanel>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>2</id>
+  <Name>kosilo</Name>
+  <Zanr>Drama</Zanr>
+  <Image>C:\Users\Matej\Desktop\UV\Krivec_UporabniskiVmesniki\Slike\2.jpg</Image>
+  <Lenghth>00:01:37</Lenghth>
+  <Pot>C:\Users\Matej\Desktop\UV\Krivec_UporabniskiVmesniki\Videi\kosilo.mp4</Pot>
+</Video>

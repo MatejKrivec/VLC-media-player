@@ -1,0 +1,28 @@
+﻿<Application x:Class="Krivec_UporabniskiVmesniki.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Krivec_UporabniskiVmesniki"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionaries/Menu.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/MediaElement.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/ListView.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/TextBlock.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Slider.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/TabControll.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Label.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/combobox.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/TextBox.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Button.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Image.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/border.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/DockPanel.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Grid.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/StackPanel.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/GridSplitter.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

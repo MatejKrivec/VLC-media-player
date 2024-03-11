@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="TextBlock" x:Key="Casovnik1">
+        <Setter Property="Width" Value="45"></Setter>
+        <Setter Property="Margin" Value="2"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Text" Value="00:00:00"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="Casovnik2">
+        <Setter Property="Width" Value="45"></Setter>
+        <Setter Property="Margin" Value="2"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="Text" Value="00:00:00"></Setter>
+    </Style>
+
+
+    <Style TargetType="TextBlock" x:Key="ListView_TextBlock_width1">
+        <Setter Property="Width" Value="20"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="ListView_TextBlock_width2">
+        <Setter Property="Width" Value="50"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="ListView_TextBlock_width3">
+        <Setter Property="Width" Value="60"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="ListView_TextBlock_width4">
+        <Setter Property="Width" Value="70"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="ListView_TextBlock_width5">
+        <Setter Property="Width" Value="auto"></Setter>
+    </Style>
+</ResourceDictionary>

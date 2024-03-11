@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="Grid" x:Key="GridBackround">
+        <Setter Property="Background" Value="LightGray"></Setter>
+    </Style>
+
+    <Style TargetType="Grid" x:Key="GridBackround_userControll">
+        <Setter Property="Background" Value="DarkGray"></Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="GridSplitter" x:Key="GridSplitter_Properties">
+        <Setter Property="Height" Value="3"/>
+        <Setter Property="Background" Value="DarkGray"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+</ResourceDictionary>
